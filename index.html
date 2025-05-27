@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaFabrica - Student Business Club</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {}
+            }
+        }
+    </script>
+    <!-- Updated Font Awesome CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js" integrity="sha512-6sSYJqDreZRZGkJ3b+YfdhB3F8gQdmDLKLkjWv0T1I2Sf0nve1b0Q4GieQ88vVJGYnV4yQEDb3Wv9PoOzb8CuOg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body class="font-sans bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white dark:bg-gray-800 shadow-md z-20">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-blue-600 dark:text-blue-400">LaFabrica</h1>
+            <div class="flex items-center space-x-6">
+                <!-- Desktop Menu -->
+                <ul class="hidden md:flex space-x-6">
+                    <li><a href="#home" class="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">Home</a></li>
+                    <li><a href="#who-we-are" class="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">Who We Are</a></li>
+                    <li><a href="#products" class="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">Product & Order</a></li>
+                    <li><a href="#contact" class="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">Contact Us</a></li>
+                </ul>
+                <!-- Theme Toggle -->
+                <button id="theme-toggle" class="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon text-xl"></i>
+                </button>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-toggle" class="md:hidden text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400" aria-label="Toggle mobile menu">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 w-full absolute top-full left-0 shadow-md z-10">
+            <ul class="flex flex-col items-center py-4 space-y-4">
+                <li><a href="#home" class="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">Home</a></li>
+                <li><a href="#who-we-are" class="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">Who We Are</a></li>
+                <li><a href="#products" class="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">Product & Order</a></li>
+                <li><a href="#contact" class="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Section 1: Home -->
+    <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 to-indigo-600 dark:from-blue-700 dark:to-indigo-900 text-white pt-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">Welcome to LaFabrica</h2>
+            <p class="text-lg md:text-xl mb-6">Empowering student entrepreneurs to build the future.</p>
+            <a href="#contact" class="bg-white dark:bg-gray-700 text-blue-600 dark:text-blue-300 px-6 py-3 rounded-full font-semibold hover:bg-gray-200 dark:hover:bg-gray-600">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- Section 2: Who We Are -->
+    <section id="who-we-are" class="min-h-screen flex items-center justify-center bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-200 mb-4">Who We Are</h2>
+            <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                LaFabrica is the student business club at [Your School Name], dedicated to fostering innovation, entrepreneurship, and collaboration among students. We provide resources, mentorship, and opportunities to turn ideas into reality.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section 3: Products -->
+    <section id="products" class="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-200 text-center mb-8">Our Products</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">Soap</h3>
+                    <p class="text-gray-600 dark:text-gray-300">High-quality soap crafted by our student entrepreneurs. Available in 3L and 5L sizes.</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Order Soap</h3>
+                    <form id="order-form">
+                        <div class="mb-4">
+                            <label for="order-name" class="block text-sm font-medium text-gray-700 dark:text-gray-200">Name</label>
+                            <input type="text" id="order-name" name="name" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="order-tel" class="block text-sm font-medium text-gray-700 dark:text-gray-200">Telephone</label>
+                            <input type="tel" id="order-tel" name="tel" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="order-email" class="block text-sm font-medium text-gray-700 dark:text-gray-200">Email (Optional)</label>
+                            <input type="email" id="order-email" name="email" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-200">Product</label>
+                            <input type="text" name="product" value="Soap" class="w-full px-4 py-2 border rounded-md bg-gray-100 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-600" readonly>
+                        </div>
+                        <div class="mb-4">
+                            <label for="quantity-3l" class="block text-sm font-medium text-gray-700 dark:text-gray-200">Quantity (3 Litres)</label>
+                            <input type="number" id="quantity-3l" name="quantity_3l" min="0" value="0" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600">
+                        </div>
+                        <div class="mb-4">
+                            <label for="quantity-5l" class="block text-sm font-medium text-gray-700 dark:text-gray-200">Quantity (5 Litres)</label>
+                            <input type="number" id="quantity-5l" name="quantity_5l" min="0" value="0" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600">
+                        </div>
+                        <div class="flex space-x-4 mb-4">
+                            <button type="button" id="confirm-order" class="w-full bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 dark:hover:bg-green-500">Confirm Order</button>
+                            <button type="submit" id="submit-order" class="w-full bg-gray-400 text-white px-4 py-2 rounded-md cursor-not-allowed opacity-50 blur-sm" disabled>Submit Order</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Contact Us -->
+    <section id="contact" class="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 to-indigo-600 dark:from-blue-700 dark:to-indigo-900 text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Contact Us</h2>
+            <div class="max-w-lg mx-auto bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 p-8 rounded-lg shadow-md">
+                <form id="contact-form">
+                    <div class="mb-4">
+                        <label for="name" class="block text-sm font-medium">Name</label>
+                        <input type="text" id="name" name="name" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-sm font-medium">Email</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="message" class="block text-sm font-medium">Message</label>
+                        <textarea id="message" name="message" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 dark:hover:bg-blue-500">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Footer -->
+    <footer class="bg-gray-800 dark:bg-gray-900 text-white py-6">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <p>LaFabrica © 2025 | All Rights Reserved</p>
+            <div class="flex space-x-4 mt-4 md:mt-0">
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram text-2xl hover:text-blue-400"></i></a>
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook text-2xl hover:text-blue-400"></i></a>
+                <a href="mailto:contact@lafabrica.com" aria-label="Email"><i class="fas fa-envelope text-2xl hover:text-blue-400"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Close mobile menu if open
+                const mobileMenu = document.getElementById('mobile-menu');
+                const menuIcon = document.getElementById('mobile-menu-toggle').querySelector('i');
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.replace('fa-times', 'fa-bars');
+            });
+        });
+
+        // Dark mode toggle
+        const html = document.documentElement;
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = themeToggle.querySelector('i');
+
+        if (localStorage.getItem('theme') === 'dark') {
+            html.classList.add('dark');
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            if (html.classList.contains('dark')) {
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = mobileMenuToggle.querySelector('i');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.replace('fa-times', 'fa-bars');
+            } else {
+                menuIcon.classList.replace('fa-bars', 'fa-times');
+            }
+        });
+
+        // Order form confirmation
+        const confirmButton = document.getElementById('confirm-order');
+        const submitButton = document.getElementById('submit-order');
+        const quantity3L = document.getElementById('quantity-3l');
+        const quantity5L = document.getElementById('quantity-5l');
+
+        confirmButton.addEventListener('click', () => {
+            if (parseInt(quantity3L.value) > 0 || parseInt(quantity5L.value) > 0) {
+                submitButton.disabled = false;
+                submitButton.classList.remove('bg-gray-400', 'cursor-not-allowed', 'opacity-50', 'blur-sm');
+                submitButton.classList.add('bg-blue-600', 'hover:bg-blue-700', 'dark:hover:bg-blue-500');
+            } else {
+                alert('Please enter a quantity for at least one size.');
+            }
+        });
+    </script>
+    <script src="form-submission.js"></script>
+</body>
+</html>
