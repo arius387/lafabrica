@@ -10,7 +10,7 @@ async function submitForm(formId, formType) {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': 'Bearer YOUR_SUPABASE_ANON_KEY',
+                    'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF4enhtbHpmbmRzaWJrZGhkdmRlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDgzNzI2MjUsImV4cCI6MjA2Mzk0ODYyNX0.3vy4zLWhOCM9Xla6BqqDpYhw8Xm9egRO4sCcH0K9_aM',
                 },
                 body: JSON.stringify({ formType, data }),
             });
