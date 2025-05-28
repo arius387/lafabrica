@@ -6,7 +6,7 @@ async function submitForm(formId, formType) {
         const data = Object.fromEntries(formData);
 
         try {
-            const response = await fetch('https://qxzxmlzfndsibkdhdvde.functions.supabase.co/send-email', {
+            const response = await fetch('https://qxzxmlzfndsibkdhdvde.supabase.co', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
